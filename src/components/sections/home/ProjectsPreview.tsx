@@ -16,7 +16,7 @@ export default function ProjectsPreview({ locale, dict }: { locale: Locale; dict
             {t.button}
           </LinkButton>
         </div>
-        <ProjectGrid projects={dict.projects.items} labels={dict.projects.filters} inWord={dict.projects.in} />
+        <ProjectGrid projects={dict.projects.items.slice(0, 6)} labels={dict.projects.filters} inWord={dict.projects.in} />
       </div>
     </section>
   )

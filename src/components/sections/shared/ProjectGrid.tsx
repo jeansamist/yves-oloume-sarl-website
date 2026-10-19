@@ -16,13 +16,14 @@ export default function ProjectGrid({ projects, labels, inWord }: ProjectGridPro
         <article className={`project-card project-${index + 1}`} key={project.title}>
           <Image
             src={images[project.image]}
-            alt={`${project.title} ${inWord} ${project.city}`}
+            alt={project.city ? `${project.title} ${inWord} ${project.city}` : project.title}
             placeholder="blur"
             sizes="(max-width: 760px) 100vw, 60vw"
           />
           <div>
             <span>
-              {labels[project.category]} · {project.city}
+              {labels[project.category]}
+              {project.city && ` · ${project.city}`}
             </span>
             <h3>{project.title}</h3>
             <Icon name="arrow" />

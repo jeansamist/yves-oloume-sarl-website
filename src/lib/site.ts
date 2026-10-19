@@ -8,6 +8,15 @@ import steel from "@/assets/images/steel.jpg"
 import team from "@/assets/images/team.jpg"
 import warehouse from "@/assets/images/warehouse.jpg"
 import worker from "@/assets/images/worker.jpg"
+// Photos of Yves OLOUME SARL projects
+import containerInterior from "@/assets/images/container-interior.jpg"
+import containerOffice from "@/assets/images/container-office.jpg"
+import officeBuilding from "@/assets/images/office-building.jpg"
+import officeCorridor from "@/assets/images/office-corridor.jpg"
+import officeWing from "@/assets/images/office-wing.jpg"
+import prefabBuilding from "@/assets/images/prefab-building.jpg"
+import technicians from "@/assets/images/technicians.jpg"
+import toilets from "@/assets/images/toilets.jpg"
 
 export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.yves-oloume.com").replace(/\/$/, "")
 
@@ -38,6 +47,14 @@ export const images = {
   steel,
   interior,
   engineer,
+  toilets,
+  technicians,
+  officeBuilding,
+  officeWing,
+  officeCorridor,
+  containerOffice,
+  prefabBuilding,
+  containerInterior,
 } satisfies Record<string, StaticImageData>
 
 export type ImageKey = keyof typeof images
