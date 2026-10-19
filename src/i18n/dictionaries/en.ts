@@ -153,6 +153,7 @@ const en: Dictionary = {
       { title: "Our technicians assembling a structure", category: "btp", image: "technicians" },
       { title: "Two-storey prefabricated office building", category: "offices", image: "officeBuilding" },
       { title: "Air-conditioned modular offices", category: "offices", image: "officeWing" },
+      { title: "Open-plan office fitted inside a modular building", category: "offices", image: "officeOpenSpace" },
       { title: "Interior corridor of a modular building", category: "offices", image: "officeCorridor" },
       { title: "Fitted container office", category: "offices", image: "containerOffice" },
       { title: "Prefabricated building being installed", category: "houses", image: "prefabBuilding" },
@@ -445,6 +446,7 @@ const en: Dictionary = {
         "Need to expand your premises, open a branch or set up an office on site? Our modular offices are delivered ready to use: air conditioning, electricity, lighting and secure doors and windows.",
       breadcrumb: "Modular offices",
       image: "hero",
+      detailImage: "officeOpenSpace",
       audienceTitle: "Who is it for?",
       audience: [
         "Growing businesses",

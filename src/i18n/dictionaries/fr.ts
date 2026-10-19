@@ -13,6 +13,8 @@ export type SolutionPageData = {
   intro: string
   breadcrumb: string
   image: ImageKey
+  /** Framed image in the page body (defaults to `image`). */
+  detailImage?: ImageKey
   audienceTitle: string
   audience: string[]
   advantages: string[]
@@ -175,6 +177,7 @@ const fr = {
       { title: "Nos techniciens au montage d'une structure", category: "btp", image: "technicians" },
       { title: "Bâtiment de bureaux préfabriqué sur deux niveaux", category: "offices", image: "officeBuilding" },
       { title: "Bureaux modulaires climatisés", category: "offices", image: "officeWing" },
+      { title: "Open space aménagé dans un bâtiment modulaire", category: "offices", image: "officeOpenSpace" },
       { title: "Couloir intérieur d'un bâtiment modulaire", category: "offices", image: "officeCorridor" },
       { title: "Conteneur bureau aménagé", category: "offices", image: "containerOffice" },
       { title: "Bâtiment préfabriqué en cours d'installation", category: "houses", image: "prefabBuilding" },
@@ -470,6 +473,7 @@ const fr = {
         "Besoin d'agrandir vos locaux, d'ouvrir une agence ou d'installer un bureau sur un site ? Nos bureaux modulaires sont livrés prêts à l'emploi : climatisation, électricité, éclairage et menuiseries sécurisées.",
       breadcrumb: "Bureaux modulaires",
       image: "hero",
+      detailImage: "officeOpenSpace",
       audienceTitle: "Pour qui ?",
       audience: [
         "Entreprises en croissance",

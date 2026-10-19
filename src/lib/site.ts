@@ -18,6 +18,7 @@ import modularUnits from "@/assets/images/modular-units.jpg"
 import modularWalkway from "@/assets/images/modular-walkway.jpg"
 import officeBuilding from "@/assets/images/office-building.jpg"
 import officeCorridor from "@/assets/images/office-corridor.jpg"
+import officeOpenSpace from "@/assets/images/office-open-space.jpg"
 import officeWing from "@/assets/images/office-wing.jpg"
 import prefabBuilding from "@/assets/images/prefab-building.jpg"
 import technicians from "@/assets/images/technicians.jpg"
@@ -65,6 +66,7 @@ export const images = {
   modularWalkway,
   craneInstallation,
   moduleAssembly,
+  officeOpenSpace,
 } satisfies Record<string, StaticImageData>
 
 export type ImageKey = keyof typeof images

@@ -27,7 +27,7 @@ export default function SolutionOverview({ data, t }: SolutionOverviewProps) {
           </Stagger>
         </Reveal>
         <div>
-          <CornerImage src={images[data.image]} alt={data.breadcrumb} />
+          <CornerImage src={images[data.detailImage ?? data.image]} alt={data.breadcrumb} />
           <Reveal className="advantages">
             <span className="eyebrow">{t.advantagesLabel}</span>
             <h2>{t.advantagesTitle}</h2>

@@ -20,6 +20,9 @@
 address { font-style: normal; }
 .stat dd { margin:0; }
 html { scroll-behavior: smooth; }
+/* Prevent horizontal scroll from off-screen reveal offsets (motion x: ±48px) and decorative overhangs.
+   `clip` (unlike `hidden`) doesn't create a scroll container, so position: sticky keeps working. */
+html, body { overflow-x: hidden; overflow-x: clip; }
 body { margin: 0; min-width: 320px; line-height: 1.6; }
 body, button, input, select, textarea { font-family: var(--font-plex-sans), sans-serif; }
 button, a { -webkit-tap-highlight-color: transparent; }
