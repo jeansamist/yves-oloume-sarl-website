@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image, { type StaticImageData } from "next/image"
 import Link from "next/link"
 import type { CSSProperties } from "react"
 import Icon from "../../ui/Icon"
@@ -8,7 +8,7 @@ type SolutionCardProps = {
   title: string
   text: string
   tag: string
-  image: string
+  image: StaticImageData
   index: number
   learnMore: string
 }
@@ -17,7 +17,7 @@ export default function SolutionCard({ href, title, text, tag, image, index, lea
   return (
     <article className="solution-card reveal" style={{ "--delay": `${index * 70}ms` } as CSSProperties}>
       <Link className="card-image" href={href} tabIndex={-1} aria-hidden="true">
-        <Image src={image} alt={title} width={800} height={500} sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 33vw" />
+        <Image src={image} alt={title} placeholder="blur" sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 33vw" />
       </Link>
       <div className="card-body">
         <span className="eyebrow">

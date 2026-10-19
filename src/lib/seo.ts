@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import type { StaticImageData } from "next/image"
 import { defaultLocale, locales, ogLocales, type Locale } from "@/i18n/config"
 import { localizePath } from "./routes"
 import { company, images, siteUrl } from "./site"
@@ -8,7 +9,7 @@ type PageSeo = {
   path: string
   title: string
   description: string
-  image?: string
+  image?: StaticImageData
   noIndex?: boolean
 }
 
@@ -37,13 +38,13 @@ export function buildMetadata({ locale, path, title, description, image = images
       url,
       locale: ogLocales[locale],
       alternateLocale: locales.filter((l) => l !== locale).map((l) => ogLocales[l]),
-      images: [{ url: image, width: 1200, height: 630, alt: title }],
+      images: [{ url: image.src, width: image.width, height: image.height, alt: title }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [image],
+      images: [image.src],
     },
     robots: noIndex ? { index: false, follow: true } : undefined,
   }

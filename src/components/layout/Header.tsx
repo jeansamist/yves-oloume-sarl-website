@@ -39,7 +39,7 @@ export default function Header({ locale, t, common, megaMenu }: HeaderProps) {
     <>
       <header className={scrolled ? "header scrolled" : "header"}>
         <div className="container nav">
-          <Brand href={href(routes.home)} ariaLabel={t.brandAria} tagline={t.brandTagline} />
+          <Brand href={href(routes.home)} ariaLabel={t.brandAria} tagline={t.brandTagline} priority />
           <nav className="desktop-nav" aria-label={t.mainNav}>
             <Link href={href(routes.home)}>{t.nav.home}</Link>
             <Link href={href(routes.about)}>{t.nav.about}</Link>

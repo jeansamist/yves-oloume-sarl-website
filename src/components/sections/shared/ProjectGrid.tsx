@@ -17,8 +17,7 @@ export default function ProjectGrid({ projects, labels, inWord }: ProjectGridPro
           <Image
             src={images[project.image]}
             alt={`${project.title} ${inWord} ${project.city}`}
-            width={1000}
-            height={600}
+            placeholder="blur"
             sizes="(max-width: 760px) 100vw, 60vw"
           />
           <div>

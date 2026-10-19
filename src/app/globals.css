@@ -66,6 +66,8 @@ h3 { font-size: 1.35rem; font-weight: 700; }
 .brand-mark span:nth-child(2) { height: 80%; align-self: center; }
 .brand strong { display: block; font: 800 1rem var(--font-archivo); letter-spacing: -.035em; }
 .brand small { display: block; margin-top: 5px; font: 500 .58rem var(--font-plex-mono); letter-spacing: .11em; color: var(--red); }
+.brand-logo { width:auto; height:52px; transition:height .4s var(--ease); }
+.header.scrolled .brand-logo { height:46px; }
 .brand-light { color: white; }
 .brand-light .brand-mark span { background: var(--yellow); }
 .brand-light small { color: var(--yellow); }
@@ -362,6 +364,7 @@ textarea { resize:vertical; }
   .header { top:0; height:72px; }
   .header-cta { display:none; }
   .brand { min-width:0; }
+  .brand-logo, .header.scrolled .brand-logo { height:42px; }
   .hero { padding:125px 0 90px; min-height:calc(100svh - 60px); }
   .hero .bg-media img { object-position:62% center; }
   .hero-grid { inset:72px 0 0; background-size:45px 45px; }

@@ -1,3 +1,4 @@
+import type { StaticImageData } from "next/image"
 import Link from "next/link"
 import type { Locale } from "@/i18n/config"
 import { localizePath } from "@/lib/routes"
@@ -15,7 +16,7 @@ type PageHeroProps = {
   /** Path of the current page (without locale), used for breadcrumb structured data. */
   path: string
   intro?: string
-  image?: string
+  image?: StaticImageData
 }
 
 export default function PageHero({ locale, homeLabel, title, breadcrumb, path, intro, image = images.hero }: PageHeroProps) {

@@ -28,7 +28,7 @@ export default function MegaMenu({ locale, t, solutions }: MegaMenuProps) {
         </div>
         {solutions.slice(0, 5).map((item) => (
           <Link className="mega-card" href={localizePath(locale, `/${item.slug}`)} key={item.slug}>
-            <Image src={images[item.image]} alt="" width={400} height={300} sizes="200px" />
+            <Image src={images[item.image]} alt="" placeholder="blur" sizes="200px" />
             <span>{item.title}</span>
           </Link>
         ))}

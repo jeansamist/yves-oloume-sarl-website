@@ -1,4 +1,6 @@
+import type { StaticImageData } from "next/image"
 import type { Locale } from "@/i18n/config"
+import logo from "@/assets/images/logo.jpeg"
 import { localizePath } from "./routes"
 import { company, images, siteUrl } from "./site"
 import { absoluteUrl } from "./seo"
@@ -13,8 +15,8 @@ export function organizationSchema(locale: Locale, description: string) {
     name: company.name,
     description,
     url: absoluteUrl(localizePath(locale, "/")),
-    logo: absoluteUrl("/favicon.svg"),
-    image: images.hero,
+    logo: absoluteUrl(logo.src),
+    image: absoluteUrl(images.hero.src),
     telephone: company.phone,
     email: company.email,
     foundingDate: String(company.foundingYear),
@@ -78,13 +80,13 @@ export function faqSchema(items: [string, string][]) {
   }
 }
 
-export function serviceSchema({ name, description, path, image }: { name: string; description: string; path: string; image: string }) {
+export function serviceSchema({ name, description, path, image }: { name: string; description: string; path: string; image: StaticImageData }) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
     name,
     description,
-    image,
+    image: absoluteUrl(image.src),
     url: absoluteUrl(path),
     provider: { "@id": businessId },
     areaServed: { "@type": "Country", name: "Cameroon" },

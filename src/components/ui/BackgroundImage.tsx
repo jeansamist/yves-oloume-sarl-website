@@ -1,8 +1,8 @@
-import Image from "next/image"
+import Image, { type StaticImageData } from "next/image"
 import type { CSSProperties } from "react"
 
 type BackgroundImageProps = {
-  src: string
+  src: StaticImageData
   overlay: string
   alt?: string
   priority?: boolean
@@ -12,7 +12,7 @@ type BackgroundImageProps = {
 export default function BackgroundImage({ src, overlay, alt = "", priority = false }: BackgroundImageProps) {
   return (
     <div className="bg-media" style={{ "--overlay": overlay } as CSSProperties}>
-      <Image src={src} alt={alt} fill priority={priority} sizes="100vw" />
+      <Image src={src} alt={alt} fill priority={priority} placeholder="blur" sizes="100vw" />
     </div>
   )
 }

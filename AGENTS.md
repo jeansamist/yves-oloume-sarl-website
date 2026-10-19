@@ -26,7 +26,7 @@ Next.js 16 (App Router) + React 19 + Tailwind CSS v4 marketing site, bilingual F
 - All user-facing text lives in the dictionaries; `en.ts` is typed against `fr.ts`, so add keys to both.
 - Build internal links with `localizePath(locale, path)`.
 - Server Components by default; `"use client"` only for interactivity (header, FAQ accordion, filters, forms). Pass dictionary slices as props to client components.
-- Use `next/image` for images (remote host `images.unsplash.com` is allowed in `next.config.ts`).
+- Images live in `src/assets/images` and are statically imported via `images` in `src/lib/site.ts`; render them with `next/image` (`placeholder="blur"`).
 - Use double quotes for strings containing apostrophes (`"l'équipe"`).
 - Export components as default exports.
 

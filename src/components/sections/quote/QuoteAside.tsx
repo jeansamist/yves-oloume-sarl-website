@@ -6,7 +6,7 @@ import Icon from "../../ui/Icon"
 export default function QuoteAside({ t }: { t: Dictionary["quote"]["aside"] }) {
   return (
     <aside className="quote-aside">
-      <Image src={images.engineer} alt={t.imageAlt} width={800} height={600} sizes="(max-width: 1100px) 50vw, 30vw" />
+      <Image src={images.engineer} alt={t.imageAlt} placeholder="blur" sizes="(max-width: 1100px) 50vw, 30vw" />
       <div>
         <span className="eyebrow light">{t.eyebrow}</span>
         <h2>{t.title}</h2>
