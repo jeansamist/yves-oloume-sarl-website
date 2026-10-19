@@ -1,0 +1,10 @@
+{
+  "description": "Showcasing modular construction solutions, this site builds trust with decision-makers and facilitates quote requests for industrial and BTP projects.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
