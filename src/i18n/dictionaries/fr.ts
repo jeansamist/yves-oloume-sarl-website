@@ -335,7 +335,7 @@ const fr = {
       title: "Depuis 2010, nous construisons autrement",
       lead: "Yves OLOUME SARL est une entreprise camerounaise spécialisée dans le développement de bâtiments préfabriqués et modulaires. Créée en 2010 et installée à Akwa, au cœur de Douala, elle s'est fait connaître par son sérieux et son savoir-faire.",
       text: "Notre conviction : chaque entreprise, administration ou famille doit pouvoir disposer rapidement d'un bâtiment fiable, sans attendre des mois de chantier. C'est pourquoi nous proposons la vente, la location et l'installation de structures préfabriquées, complétées par une activité de construction et de rénovation classique.",
-      imageAlt: "Équipe de construction sur un chantier",
+      imageAlt: "Techniciens Yves OLOUME au montage de panneaux métalliques sur un chantier",
     },
     mission: {
       label: "01 — NOTRE MISSION",

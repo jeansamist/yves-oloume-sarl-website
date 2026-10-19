@@ -17,6 +17,7 @@ Next.js 16 (App Router) + React 19 + Tailwind CSS v4 marketing site, bilingual F
 - `src/app/globals.css` — all global styles (`@import "tailwindcss"` first)
 - `src/components/ui` — primitives (Icon, LinkButton, SectionTitle, BackgroundImage, JsonLd…)
 - `src/components/layout` — header, mobile menu, language switcher, footer, CTA band
+- `src/components/motion` — Motion (`motion/react`) wrappers: `Reveal`, `Stagger`/`StaggerItem`, `ParallaxLayer`, `PointerArea`/`PointerLayer`, `ScrollFade`, `PageTransition` (used by `app/[locale]/template.tsx`). Use these instead of ad-hoc animations; server components can pass children into them.
 - `src/components/sections/<page>` — page sections; `sections/shared` for reused ones
 - `src/i18n` — `config.ts` (locales, default `fr`), `dictionaries/fr.ts` (source of truth + `Dictionary` type), `dictionaries/en.ts`
 - `src/lib` — `site.ts` (company info, images, `NEXT_PUBLIC_SITE_URL`), `routes.ts`, `seo.ts`, `structured-data.ts`

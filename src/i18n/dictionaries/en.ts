@@ -310,7 +310,7 @@ const en: Dictionary = {
       title: "Building differently since 2010",
       lead: "Yves OLOUME SARL is a Cameroonian company specialising in prefabricated and modular buildings. Founded in 2010 and based in Akwa, in the heart of Douala, it has built its reputation on reliability and expertise.",
       text: "Our belief: every business, public body or family should be able to get a reliable building quickly, without waiting months for construction. That is why we sell, rent and install prefabricated structures, alongside conventional construction and renovation work.",
-      imageAlt: "Construction team on a building site",
+      imageAlt: "Yves OLOUME technicians assembling steel panels on a building site",
     },
     mission: {
       label: "01 — OUR MISSION",
