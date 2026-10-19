@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import type { StaticImageData } from "next/image"
 import { defaultLocale, locales, ogLocales, type Locale } from "@/i18n/config"
 import { localizePath } from "./routes"
 import { company, images, siteUrl } from "./site"
@@ -9,7 +8,6 @@ type PageSeo = {
   path: string
   title: string
   description: string
-  image?: StaticImageData
   noIndex?: boolean
 }
 
@@ -21,7 +19,8 @@ export function languageAlternates(path: string) {
   }
 }
 
-export function buildMetadata({ locale, path, title, description, image = images.hero, noIndex }: PageSeo): Metadata {
+export function buildMetadata({ locale, path, title, description, noIndex }: PageSeo): Metadata {
+  const image = images.ogImage
   const url = localizePath(locale, path)
   return {
     title,

@@ -1,5 +1,6 @@
 import Image, { type StaticImageData } from "next/image"
 import type { CSSProperties } from "react"
+import HeroExtraSlides from "./HeroExtraSlides"
 
 /** Seconds between two slides (a new image appears every 4s). */
 const SLIDE_SECONDS = 4
@@ -37,29 +38,35 @@ function buildKeyframes(count: number) {
 }
 
 /**
- * CSS-only cross-fading background slideshow (no client JavaScript).
- * The first slide is the LCP image and is visible immediately; with
+ * Cross-fading background slideshow. The first slide is server-rendered (LCP);
+ * the others load after the page is idle (see HeroExtraSlides). With
  * `prefers-reduced-motion` only the first slide is shown.
  */
 export default function HeroSlideshow({ slides, alt, overlay }: HeroSlideshowProps) {
+  const [first, ...rest] = slides
   return (
     <div className="bg-media hero-slides" style={{ "--overlay": overlay } as CSSProperties}>
-      {slides.length > 1 && <style>{buildKeyframes(slides.length)}</style>}
-      {slides.map((src, i) => (
-        <Image
-          key={src.src}
-          className="hero-slide"
-          src={src}
-          alt={i === 0 ? alt : ""}
-          aria-hidden={i === 0 ? undefined : true}
-          fill
-          priority={i === 0}
-          placeholder={i === 0 ? "blur" : "empty"}
-          sizes="100vw"
-          // Negative offset so slide 1 starts fully visible; each next slide fades in over the previous one.
-          style={{ animationDelay: `${i * SLIDE_SECONDS - FADE_SECONDS}s` }}
+      {/* Slide 1 is server-rendered and is the LCP image; it gets its animation once the others mount. */}
+      <Image
+        className="hero-slide"
+        src={first}
+        alt={alt}
+        fill
+        loading="eager"
+        fetchPriority="high"
+        placeholder="blur"
+        sizes="100vw"
+        style={{ animationDelay: `${-FADE_SECONDS}s` }}
+      />
+      {rest.length > 0 && (
+        <HeroExtraSlides
+          slides={rest}
+          offset={1}
+          slideSeconds={SLIDE_SECONDS}
+          fadeSeconds={FADE_SECONDS}
+          keyframes={buildKeyframes(slides.length)}
         />
-      ))}
+      )}
     </div>
   )
 }

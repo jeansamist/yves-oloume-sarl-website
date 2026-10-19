@@ -15,7 +15,7 @@ import { images } from "@/lib/site"
 export async function generateMetadata({ params }: LocaleParams): Promise<Metadata> {
   const locale = await resolveLocale(params)
   const t = getDictionary(locale).solutionsHub
-  return buildMetadata({ locale, path: routes.solutions, title: t.metaTitle, description: t.metaDescription, image: images.modules })
+  return buildMetadata({ locale, path: routes.solutions, title: t.metaTitle, description: t.metaDescription })
 }
 
 export default async function SolutionsPage({ params }: LocaleParams) {

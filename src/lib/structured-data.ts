@@ -16,7 +16,7 @@ export function organizationSchema(locale: Locale, description: string) {
     description,
     url: absoluteUrl(localizePath(locale, "/")),
     logo: absoluteUrl(logo.src),
-    image: absoluteUrl(images.hero.src),
+    image: absoluteUrl(images.ogImage.src),
     telephone: company.phone,
     email: company.email,
     foundingDate: String(company.foundingYear),

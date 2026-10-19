@@ -19,6 +19,7 @@ import modularWalkway from "@/assets/images/modular-walkway.jpg"
 import officeBuilding from "@/assets/images/office-building.jpg"
 import officeCorridor from "@/assets/images/office-corridor.jpg"
 import officeOpenSpace from "@/assets/images/office-open-space.jpg"
+import ogImage from "@/assets/images/og-image.jpg"
 import officeWing from "@/assets/images/office-wing.jpg"
 import prefabBuilding from "@/assets/images/prefab-building.jpg"
 import technicians from "@/assets/images/technicians.jpg"
@@ -67,6 +68,8 @@ export const images = {
   craneInstallation,
   moduleAssembly,
   officeOpenSpace,
+  /** 1200×630 social sharing image (Open Graph / Twitter), used on every page. */
+  ogImage,
 } satisfies Record<string, StaticImageData>
 
 export type ImageKey = keyof typeof images

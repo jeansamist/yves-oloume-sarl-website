@@ -12,7 +12,7 @@ import { images } from "@/lib/site"
 export async function generateMetadata({ params }: LocaleParams): Promise<Metadata> {
   const locale = await resolveLocale(params)
   const t = getDictionary(locale).legal
-  return buildMetadata({ locale, path: routes.legal, title: t.metaTitle, description: t.metaDescription, image: images.steel })
+  return buildMetadata({ locale, path: routes.legal, title: t.metaTitle, description: t.metaDescription })
 }
 
 export default async function LegalPage({ params }: LocaleParams) {

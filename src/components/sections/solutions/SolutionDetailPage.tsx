@@ -20,7 +20,6 @@ export function solutionMetadata(locale: Locale, slug: SolutionSlug) {
     path: `/${slug}`,
     title: data.metaTitle,
     description: data.metaDescription,
-    image: images[data.image],
   })
 }
 

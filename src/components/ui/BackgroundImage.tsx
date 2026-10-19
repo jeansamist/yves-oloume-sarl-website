@@ -13,7 +13,17 @@ type BackgroundImageProps = {
 
 /** Full-bleed optimized background image with a gradient overlay. */
 export default function BackgroundImage({ src, overlay, alt = "", priority = false, parallax = 0 }: BackgroundImageProps) {
-  const image = <Image src={src} alt={alt} fill priority={priority} placeholder="blur" sizes="100vw" />
+  const image = (
+    <Image
+      src={src}
+      alt={alt}
+      fill
+      loading={priority ? "eager" : "lazy"}
+      fetchPriority={priority ? "high" : undefined}
+      placeholder="blur"
+      sizes="100vw"
+    />
+  )
   if (parallax) {
     return (
       <ParallaxLayer

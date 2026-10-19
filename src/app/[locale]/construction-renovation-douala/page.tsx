@@ -16,7 +16,7 @@ import { serviceSchema } from "@/lib/structured-data"
 export async function generateMetadata({ params }: LocaleParams): Promise<Metadata> {
   const locale = await resolveLocale(params)
   const t = getDictionary(locale).btp
-  return buildMetadata({ locale, path: routes.btp, title: t.metaTitle, description: t.metaDescription, image: images.team })
+  return buildMetadata({ locale, path: routes.btp, title: t.metaTitle, description: t.metaDescription })
 }
 
 export default async function BtpPage({ params }: LocaleParams) {

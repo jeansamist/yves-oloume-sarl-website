@@ -13,7 +13,7 @@ import { images } from "@/lib/site"
 export async function generateMetadata({ params }: LocaleParams): Promise<Metadata> {
   const locale = await resolveLocale(params)
   const t = getDictionary(locale).quote
-  return buildMetadata({ locale, path: routes.quote, title: t.metaTitle, description: t.metaDescription, image: images.engineer })
+  return buildMetadata({ locale, path: routes.quote, title: t.metaTitle, description: t.metaDescription })
 }
 
 export default async function QuotePage({ params }: LocaleParams) {
