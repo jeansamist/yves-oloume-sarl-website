@@ -11,6 +11,11 @@ import worker from "@/assets/images/worker.jpg"
 // Photos of Yves OLOUME SARL projects
 import containerInterior from "@/assets/images/container-interior.jpg"
 import containerOffice from "@/assets/images/container-office.jpg"
+import craneInstallation from "@/assets/images/crane-installation.jpg"
+import modularComplex from "@/assets/images/modular-complex.jpg"
+import moduleAssembly from "@/assets/images/module-assembly.jpg"
+import modularUnits from "@/assets/images/modular-units.jpg"
+import modularWalkway from "@/assets/images/modular-walkway.jpg"
 import officeBuilding from "@/assets/images/office-building.jpg"
 import officeCorridor from "@/assets/images/office-corridor.jpg"
 import officeWing from "@/assets/images/office-wing.jpg"
@@ -55,6 +60,11 @@ export const images = {
   containerOffice,
   prefabBuilding,
   containerInterior,
+  modularComplex,
+  modularUnits,
+  modularWalkway,
+  craneInstallation,
+  moduleAssembly,
 } satisfies Record<string, StaticImageData>
 
 export type ImageKey = keyof typeof images

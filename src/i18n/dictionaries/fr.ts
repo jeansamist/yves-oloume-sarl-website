@@ -230,7 +230,7 @@ const fr = {
       secondary: "Voir nos réalisations",
       proofs: ["Vente et location", "Installation sur site", "Devis sous 48 h"],
       scroll: "Découvrir",
-      imageAlt: "Bureaux modulaires climatisés installés par Yves OLOUME SARL",
+      imageAlt: "Module préfabriqué posé à la grue par les techniciens Yves OLOUME SARL",
     },
     stats: [
       ["2010", "Année de création"],
@@ -281,7 +281,7 @@ const fr = {
         "Un service après-vente et de maintenance",
       ],
       button: "Découvrir notre entreprise",
-      imageAlt: "Techniciens Yves OLOUME au montage d'une structure métallique",
+      imageAlt: "Les équipes Yves OLOUME installent un module préfabriqué à la grue",
       experienceLine1: "années",
       experienceLine2: "d'expérience",
     },

@@ -205,7 +205,7 @@ const en: Dictionary = {
       secondary: "See our projects",
       proofs: ["Sale and rental", "On-site installation", "Quote within 48 h"],
       scroll: "Discover",
-      imageAlt: "Air-conditioned modular offices installed by Yves OLOUME SARL",
+      imageAlt: "Prefabricated module lifted into place by Yves OLOUME SARL technicians",
     },
     stats: [
       ["2010", "Year founded"],
@@ -256,7 +256,7 @@ const en: Dictionary = {
         "After-sales service and maintenance",
       ],
       button: "Discover our company",
-      imageAlt: "Yves OLOUME technicians assembling a steel structure",
+      imageAlt: "Yves OLOUME teams installing a prefabricated module with a crane",
       experienceLine1: "years of",
       experienceLine2: "experience",
     },

@@ -2,17 +2,16 @@ import type { Locale } from "@/i18n/config"
 import type { Dictionary } from "@/i18n/get-dictionary"
 import { localizePath, routes } from "@/lib/routes"
 import { images } from "@/lib/site"
-import BackgroundImage from "../../ui/BackgroundImage"
 import Icon from "../../ui/Icon"
 import LinkButton from "../../ui/LinkButton"
+import HeroSlideshow from "./HeroSlideshow"
 
 export default function HomeHero({ locale, t }: { locale: Locale; t: Dictionary["home"]["hero"] }) {
   return (
     <section className="hero">
-      <BackgroundImage
-        src={images.officeWing}
+      <HeroSlideshow
+        slides={[images.craneInstallation, images.modularComplex, images.modularUnits, images.modularWalkway, images.toilets]}
         alt={t.imageAlt}
-        priority
         overlay="linear-gradient(90deg,rgba(57,3,6,.92) 0%,rgba(110,11,16,.66) 48%,rgba(20,10,10,.16) 100%)"
       />
       <div className="hero-grid" />
