@@ -25,7 +25,21 @@ import prefabBuilding from "@/assets/images/prefab-building.jpg"
 import technicians from "@/assets/images/technicians.jpg"
 import toilets from "@/assets/images/toilets.jpg"
 
-export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.yves-oloume.com").replace(/\/$/, "")
+/**
+ * Absolute origin used for canonical URLs, hreflang, sitemap, Open Graph images and JSON-LD.
+ * 1. NEXT_PUBLIC_SITE_URL when set (the real domain once it points to this site)
+ * 2. On Vercel: the production domain for production builds, the deployment URL for previews
+ * 3. Local development
+ */
+function resolveSiteUrl() {
+  const env = process.env
+  if (env.NEXT_PUBLIC_SITE_URL) return env.NEXT_PUBLIC_SITE_URL
+  if (env.VERCEL_ENV === "production" && env.VERCEL_PROJECT_PRODUCTION_URL) return `https://${env.VERCEL_PROJECT_PRODUCTION_URL}`
+  if (env.VERCEL_URL) return `https://${env.VERCEL_URL}`
+  return `http://localhost:${env.PORT || 3000}`
+}
+
+export const siteUrl = resolveSiteUrl().replace(/\/$/, "")
 
 export const company = {
   name: "Yves OLOUME SARL",

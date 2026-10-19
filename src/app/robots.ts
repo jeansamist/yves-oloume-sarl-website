@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next"
 import { siteUrl } from "@/lib/site"
 
 export default function robots(): MetadataRoute.Robots {
-  // Set NEXT_PUBLIC_NOINDEX=true on preview/staging deployments to keep them out of search engines.
-  if (process.env.NEXT_PUBLIC_NOINDEX === "true") {
+  // Keep Vercel preview deployments (and anything with NEXT_PUBLIC_NOINDEX=true) out of search engines.
+  if (process.env.NEXT_PUBLIC_NOINDEX === "true" || process.env.VERCEL_ENV === "preview") {
     return { rules: { userAgent: "*", disallow: "/" } }
   }
   return {
