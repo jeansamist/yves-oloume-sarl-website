@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Reveal from "@/components/motion/Reveal"
 import QuoteAside from "@/components/sections/quote/QuoteAside"
 import QuoteForm from "@/components/sections/quote/QuoteForm"
 import PageHero from "@/components/sections/shared/PageHero"
@@ -33,7 +34,9 @@ export default async function QuotePage({ params }: LocaleParams) {
       />
       <section className="section quote-section">
         <div className="container quote-layout">
-          <QuoteForm t={t.form} />
+          <Reveal direction="left">
+            <QuoteForm t={t.form} />
+          </Reveal>
           <QuoteAside t={t.aside} />
         </div>
       </section>

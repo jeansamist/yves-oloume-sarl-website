@@ -1,6 +1,6 @@
 import Image, { type StaticImageData } from "next/image"
 import Link from "next/link"
-import type { CSSProperties } from "react"
+import { StaggerItem } from "../../motion/Stagger"
 import Icon from "../../ui/Icon"
 
 type SolutionCardProps = {
@@ -15,7 +15,7 @@ type SolutionCardProps = {
 
 export default function SolutionCard({ href, title, text, tag, image, index, learnMore }: SolutionCardProps) {
   return (
-    <article className="solution-card reveal" style={{ "--delay": `${index * 70}ms` } as CSSProperties}>
+    <StaggerItem as="article" className="solution-card">
       <Link className="card-image" href={href} tabIndex={-1} aria-hidden="true">
         <Image src={image} alt={title} placeholder="blur" sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 33vw" />
       </Link>
@@ -30,6 +30,6 @@ export default function SolutionCard({ href, title, text, tag, image, index, lea
           <span className="sr-only"> — {title}</span>
         </Link>
       </div>
-    </article>
+    </StaggerItem>
   )
 }

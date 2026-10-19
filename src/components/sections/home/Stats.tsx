@@ -1,14 +1,16 @@
+import { Stagger, StaggerItem } from "../../motion/Stagger"
+
 export default function Stats({ items }: { items: [string, string][] }) {
   return (
     <section className="stats">
-      <dl className="container stats-grid">
+      <Stagger as="dl" className="container stats-grid">
         {items.map(([num, label]) => (
-          <div className="stat" key={label}>
+          <StaggerItem className="stat" key={label}>
             <dt>{num}</dt>
             <dd>{label}</dd>
-          </div>
+          </StaggerItem>
         ))}
-      </dl>
+      </Stagger>
     </section>
   )
 }

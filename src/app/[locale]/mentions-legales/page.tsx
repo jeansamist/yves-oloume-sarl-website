@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import CtaBand from "@/components/layout/CtaBand"
+import Reveal from "@/components/motion/Reveal"
 import PageHero from "@/components/sections/shared/PageHero"
 import type { LocaleParams } from "@/i18n/config"
 import { getDictionary } from "@/i18n/get-dictionary"
@@ -30,10 +31,10 @@ export default async function LegalPage({ params }: LocaleParams) {
         image={images.steel}
       />
       <section className="section">
-        <div className="container legal">
+        <Reveal className="container legal">
           <h2>{t.publisherTitle}</h2>
           <p>{t.publisherText}</p>
-        </div>
+        </Reveal>
       </section>
       <CtaBand locale={locale} t={dict.cta} />
     </>

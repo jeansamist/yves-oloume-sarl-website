@@ -1,6 +1,7 @@
 import Image from "next/image"
 import type { Dictionary } from "@/i18n/get-dictionary"
 import { images } from "@/lib/site"
+import { Stagger, StaggerItem } from "../../motion/Stagger"
 import Icon from "../../ui/Icon"
 
 type ProjectGridProps = {
@@ -11,9 +12,9 @@ type ProjectGridProps = {
 
 export default function ProjectGrid({ projects, labels, inWord }: ProjectGridProps) {
   return (
-    <div className="project-grid">
+    <Stagger className="project-grid">
       {projects.map((project, index) => (
-        <article className={`project-card project-${index + 1}`} key={project.title}>
+        <StaggerItem as="article" className={`project-card project-${index + 1}`} key={project.title}>
           <Image
             src={images[project.image]}
             alt={project.city ? `${project.title} ${inWord} ${project.city}` : project.title}
@@ -28,8 +29,8 @@ export default function ProjectGrid({ projects, labels, inWord }: ProjectGridPro
             <h3>{project.title}</h3>
             <Icon name="arrow" />
           </div>
-        </article>
+        </StaggerItem>
       ))}
-    </div>
+    </Stagger>
   )
 }

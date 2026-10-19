@@ -1,5 +1,6 @@
 import type { Dictionary } from "@/i18n/get-dictionary"
 import { company } from "@/lib/site"
+import { Stagger, StaggerItem } from "../../motion/Stagger"
 import Icon, { type IconName } from "../../ui/Icon"
 
 export default function ContactCards({ t }: { t: Dictionary["contact"] }) {
@@ -13,15 +14,17 @@ export default function ContactCards({ t }: { t: Dictionary["contact"] }) {
   return (
     <section className="section contact">
       <div className="container">
-        <address className="contact-cards">
+        <Stagger as="address" className="contact-cards">
           {cards.map((card) => (
-            <a key={card.title} href={card.href} target={card.href?.startsWith("http") ? "_blank" : undefined} rel="noopener">
+            <StaggerItem key={card.title}>
+            <a href={card.href} target={card.href?.startsWith("http") ? "_blank" : undefined} rel="noopener">
               <Icon name={card.icon} size={28} />
               <span>{card.title}</span>
               <strong>{card.text}</strong>
             </a>
+            </StaggerItem>
           ))}
-        </address>
+        </Stagger>
         <p className="hours">
           <Icon name="clock" />
           {t.hours}

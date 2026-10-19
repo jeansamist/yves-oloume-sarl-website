@@ -1,5 +1,7 @@
 import type { Dictionary, SolutionPageData } from "@/i18n/dictionaries/fr"
 import { images } from "@/lib/site"
+import Reveal from "../../motion/Reveal"
+import { Stagger, StaggerItem } from "../../motion/Stagger"
 import CornerImage from "../../ui/CornerImage"
 import Icon from "../../ui/Icon"
 
@@ -12,21 +14,21 @@ export default function SolutionOverview({ data, t }: SolutionOverviewProps) {
   return (
     <section className="section">
       <div className="container detail-layout">
-        <aside>
+        <Reveal as="aside" direction="left">
           <span className="eyebrow">{t.customEyebrow}</span>
           <h2>{data.audienceTitle}</h2>
-          <ul className="audience-list">
+          <Stagger as="ul" className="audience-list">
             {data.audience.map((item, i) => (
-              <li key={item}>
+              <StaggerItem as="li" key={item}>
                 <b>{String(i + 1).padStart(2, "0")}</b>
                 {item}
-              </li>
+              </StaggerItem>
             ))}
-          </ul>
-        </aside>
+          </Stagger>
+        </Reveal>
         <div>
           <CornerImage src={images[data.image]} alt={data.breadcrumb} />
-          <div className="advantages">
+          <Reveal className="advantages">
             <span className="eyebrow">{t.advantagesLabel}</span>
             <h2>{t.advantagesTitle}</h2>
             <ul>
@@ -37,7 +39,7 @@ export default function SolutionOverview({ data, t }: SolutionOverviewProps) {
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

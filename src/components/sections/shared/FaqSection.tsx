@@ -2,6 +2,7 @@ import type { Faq } from "@/i18n/dictionaries/fr"
 import { faqSchema } from "@/lib/structured-data"
 import JsonLd from "../../ui/JsonLd"
 import SectionTitle from "../../ui/SectionTitle"
+import Reveal from "../../motion/Reveal"
 import FaqAccordion from "./FaqAccordion"
 
 type FaqSectionProps = {
@@ -17,7 +18,9 @@ export default function FaqSection({ label, title, items, number = "04" }: FaqSe
     <section className="section faq-section">
       <div className="container faq-layout">
         <SectionTitle number={number} label={label} title={title} />
-        <FaqAccordion items={items} />
+        <Reveal direction="right">
+          <FaqAccordion items={items} />
+        </Reveal>
       </div>
       <JsonLd data={faqSchema(items)} />
     </section>

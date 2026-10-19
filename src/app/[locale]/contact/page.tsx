@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import CtaBand from "@/components/layout/CtaBand"
+import Reveal from "@/components/motion/Reveal"
 import ContactCards from "@/components/sections/contact/ContactCards"
 import ContactForm from "@/components/sections/contact/ContactForm"
 import MapCard from "@/components/sections/contact/MapCard"
@@ -35,7 +36,9 @@ export default async function ContactPage({ params }: LocaleParams) {
       <ContactCards t={t} />
       <section className="section muted">
         <div className="container contact-layout">
-          <ContactForm t={t.form} />
+          <Reveal direction="left">
+            <ContactForm t={t.form} />
+          </Reveal>
           <MapCard t={t.map} />
         </div>
       </section>

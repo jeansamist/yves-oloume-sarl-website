@@ -1,11 +1,12 @@
 import Image from "next/image"
 import type { Dictionary } from "@/i18n/get-dictionary"
 import { company, images } from "@/lib/site"
+import Reveal from "../../motion/Reveal"
 import Icon from "../../ui/Icon"
 
 export default function QuoteAside({ t }: { t: Dictionary["quote"]["aside"] }) {
   return (
-    <aside className="quote-aside">
+    <Reveal as="aside" className="quote-aside" direction="right">
       <Image src={images.engineer} alt={t.imageAlt} placeholder="blur" sizes="(max-width: 1100px) 50vw, 30vw" />
       <div>
         <span className="eyebrow light">{t.eyebrow}</span>
@@ -31,6 +32,6 @@ export default function QuoteAside({ t }: { t: Dictionary["quote"]["aside"] }) {
           ))}
         </ul>
       </div>
-    </aside>
+    </Reveal>
   )
 }

@@ -1,4 +1,5 @@
 import type { Dictionary } from "@/i18n/get-dictionary"
+import { Stagger, StaggerItem } from "../../motion/Stagger"
 import Icon from "../../ui/Icon"
 import SectionTitle from "../../ui/SectionTitle"
 
@@ -13,16 +14,16 @@ export default function SolutionExtras({ title, items, t }: SolutionExtrasProps)
     <section className="section muted">
       <div className="container">
         <SectionTitle number="02" label={title || t.extrasLabel} title={`${title} ${t.extrasSuffix}`} />
-        <div className="model-grid">
+        <Stagger className="model-grid">
           {items.map((item, i) => (
-            <article key={item}>
+            <StaggerItem as="article" key={item}>
               <span>0{i + 1}</span>
               <Icon name="home" size={32} />
               <h3>{item}</h3>
               <p>{t.extrasPrice}</p>
-            </article>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </div>
     </section>
   )

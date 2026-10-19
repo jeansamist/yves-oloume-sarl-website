@@ -2,6 +2,7 @@ import type { Locale } from "@/i18n/config"
 import type { Dictionary } from "@/i18n/get-dictionary"
 import { localizePath } from "@/lib/routes"
 import { images, type ImageKey } from "@/lib/site"
+import { Stagger } from "../../motion/Stagger"
 import SolutionCard from "./SolutionCard"
 
 type SolutionsGridProps = {
@@ -14,7 +15,7 @@ type SolutionsGridProps = {
 
 export default function SolutionsGrid({ locale, items, learnMore, imageOverrides = {} }: SolutionsGridProps) {
   return (
-    <div className="solutions-grid">
+    <Stagger className="solutions-grid">
       {items.map((item, index) => (
         <SolutionCard
           key={item.slug}
@@ -27,6 +28,6 @@ export default function SolutionsGrid({ locale, items, learnMore, imageOverrides
           learnMore={learnMore}
         />
       ))}
-    </div>
+    </Stagger>
   )
 }

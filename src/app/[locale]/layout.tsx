@@ -5,8 +5,8 @@ import FloatingActions from "@/components/layout/FloatingActions"
 import Footer from "@/components/layout/Footer"
 import Header from "@/components/layout/Header"
 import MegaMenu from "@/components/layout/MegaMenu"
-import RevealObserver from "@/components/layout/RevealObserver"
 import Topbar from "@/components/layout/Topbar"
+import MotionProvider from "@/components/motion/MotionProvider"
 import JsonLd from "@/components/ui/JsonLd"
 import { htmlLang, locales, type LocaleParams } from "@/i18n/config"
 import { getDictionary } from "@/i18n/get-dictionary"
@@ -66,6 +66,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   return (
     <html lang={htmlLang[locale]} className={`${archivo.variable} ${plexSans.variable} ${plexMono.variable}`}>
       <body>
+        <MotionProvider>
         <a className="skip-link" href="#main">
           {dict.common.skipToContent}
         </a>
@@ -79,7 +80,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
         <main id="main">{children}</main>
         <Footer locale={locale} dict={dict} />
         <FloatingActions locale={locale} t={dict.floating} />
-        <RevealObserver />
+        </MotionProvider>
         <JsonLd data={[organizationSchema(locale, dict.meta.description), websiteSchema(locale)]} />
       </body>
     </html>

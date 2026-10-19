@@ -1,3 +1,5 @@
+import Reveal from "../motion/Reveal"
+
 type SectionTitleProps = {
   number: string
   label: string
@@ -8,12 +10,12 @@ type SectionTitleProps = {
 
 export default function SectionTitle({ number, label, title, intro, center = false }: SectionTitleProps) {
   return (
-    <div className={`section-heading ${center ? "center" : ""}`}>
+    <Reveal className={`section-heading ${center ? "center" : ""}`}>
       <span className="eyebrow">
         {number} — {label}
       </span>
       <h2>{title}</h2>
       {intro && <p>{intro}</p>}
-    </div>
+    </Reveal>
   )
 }

@@ -23,7 +23,7 @@ export default function PageHero({ locale, homeLabel, title, breadcrumb, path, i
   const homeHref = localizePath(locale, "/")
   return (
     <section className="page-hero">
-      <BackgroundImage src={image} overlay="linear-gradient(90deg,rgba(57,3,6,.92),rgba(110,11,16,.48))" priority />
+      <BackgroundImage src={image} overlay="linear-gradient(90deg,rgba(57,3,6,.92),rgba(110,11,16,.48))" priority parallax={90} />
       <div className="container">
         <nav className="breadcrumb" aria-label="Breadcrumb">
           <Link href={homeHref}>{homeLabel}</Link>
