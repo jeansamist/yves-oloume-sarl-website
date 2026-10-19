@@ -1,16 +1,18 @@
 import type { Locale } from "@/i18n/config"
 import type { Dictionary } from "@/i18n/get-dictionary"
 import { localizePath } from "@/lib/routes"
-import { images } from "@/lib/site"
+import { images, type ImageKey } from "@/lib/site"
 import SolutionCard from "./SolutionCard"
 
 type SolutionsGridProps = {
   locale: Locale
   items: Dictionary["solutions"]
   learnMore: string
+  /** Replace the default image of some solutions (by slug) on this page only. */
+  imageOverrides?: Partial<Record<string, ImageKey>>
 }
 
-export default function SolutionsGrid({ locale, items, learnMore }: SolutionsGridProps) {
+export default function SolutionsGrid({ locale, items, learnMore, imageOverrides = {} }: SolutionsGridProps) {
   return (
     <div className="solutions-grid">
       {items.map((item, index) => (
@@ -20,7 +22,7 @@ export default function SolutionsGrid({ locale, items, learnMore }: SolutionsGri
           title={item.title}
           text={item.text}
           tag={item.tag}
-          image={images[item.image]}
+          image={images[imageOverrides[item.slug] ?? item.image]}
           index={index}
           learnMore={learnMore}
         />

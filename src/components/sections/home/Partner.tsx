@@ -12,7 +12,7 @@ export default function Partner({ locale, t }: { locale: Locale; t: Dictionary["
     <section className="section partner">
       <div className="container split">
         <div className="partner-visual">
-          <CornerImage src={images.worker} alt={t.imageAlt} />
+          <CornerImage src={images.technicians} alt={t.imageAlt} />
           <div className="experience">
             <strong>15+</strong>
             <span>

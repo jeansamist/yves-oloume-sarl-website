@@ -205,7 +205,7 @@ const en: Dictionary = {
       secondary: "See our projects",
       proofs: ["Sale and rental", "On-site installation", "Quote within 48 h"],
       scroll: "Discover",
-      imageAlt: "Prefabricated modular building installed in Cameroon",
+      imageAlt: "Air-conditioned modular offices installed by Yves OLOUME SARL",
     },
     stats: [
       ["2010", "Year founded"],
@@ -256,7 +256,7 @@ const en: Dictionary = {
         "After-sales service and maintenance",
       ],
       button: "Discover our company",
-      imageAlt: "Construction professional wearing safety equipment",
+      imageAlt: "Yves OLOUME technicians assembling a steel structure",
       experienceLine1: "years of",
       experienceLine2: "experience",
     },

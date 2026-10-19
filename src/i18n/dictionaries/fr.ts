@@ -230,7 +230,7 @@ const fr = {
       secondary: "Voir nos réalisations",
       proofs: ["Vente et location", "Installation sur site", "Devis sous 48 h"],
       scroll: "Découvrir",
-      imageAlt: "Bâtiment modulaire préfabriqué installé au Cameroun",
+      imageAlt: "Bureaux modulaires climatisés installés par Yves OLOUME SARL",
     },
     stats: [
       ["2010", "Année de création"],
@@ -281,7 +281,7 @@ const fr = {
         "Un service après-vente et de maintenance",
       ],
       button: "Découvrir notre entreprise",
-      imageAlt: "Professionnel du bâtiment en équipement de sécurité",
+      imageAlt: "Techniciens Yves OLOUME au montage d'une structure métallique",
       experienceLine1: "années",
       experienceLine2: "d'expérience",
     },

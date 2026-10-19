@@ -10,7 +10,7 @@ export default function HomeHero({ locale, t }: { locale: Locale; t: Dictionary[
   return (
     <section className="hero">
       <BackgroundImage
-        src={images.hero}
+        src={images.officeWing}
         alt={t.imageAlt}
         priority
         overlay="linear-gradient(90deg,rgba(57,3,6,.92) 0%,rgba(110,11,16,.66) 48%,rgba(20,10,10,.16) 100%)"
